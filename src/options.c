@@ -420,6 +420,7 @@ static void feh_parse_option_array(int argc, char **argv, int finalrun)
 		{"draw-tinted"   , 0, 0, OPTION_draw_tinted},
 		{"info"          , 1, 0, OPTION_info},
 		{"tap-zones"     , 0, 0, OPTION_tap_zones},
+		{"no-panning"    , 0, 0, OPTION_no_panning},
 		{"force-aliasing", 0, 0, OPTION_force_aliasing},
 		{"no-fehbg"      , 0, 0, OPTION_no_fehbg},
 		{"keep-zoom-vp"  , 0, 0, OPTION_keep_zoom_vp},
@@ -786,6 +787,9 @@ static void feh_parse_option_array(int argc, char **argv, int finalrun)
 			break;
 		case OPTION_tap_zones:
 			opt.tap_zones = 1;
+			break;
+		case OPTION_no_panning:
+			opt.no_panning = 1;
 			break;
 		case OPTION_force_aliasing:
 			opt.force_aliasing = 1;

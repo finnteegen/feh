@@ -441,6 +441,10 @@ add multiple paths.
 .
 Enable tap zones for previous/next file in slide show mode
 .
+.It Cm --no-panning
+.
+Disable panning
+.
 .It Cm --force-aliasing
 .
 Disable anti-aliasing for zooming, background setting etc.

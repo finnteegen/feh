@@ -575,9 +575,9 @@ static void feh_event_handle_MotionNotify(XEvent * ev)
 		winwid = winwidget_get_from_window(ev->xmotion.window);
 		if (winwid) {
 			if (opt.mode == MODE_NEXT) {
-				if ((abs(winwid->click_offset_x - (ev->xmotion.x - winwid->im_x)) > FEH_JITTER_OFFSET)
+				if (!opt.no_panning && ((abs(winwid->click_offset_x - (ev->xmotion.x - winwid->im_x)) > FEH_JITTER_OFFSET)
 						|| (abs(winwid->click_offset_y - (ev->xmotion.y - winwid->im_y)) > FEH_JITTER_OFFSET)
-						|| (time(NULL) - winwid->click_start_time > FEH_JITTER_TIME)) {
+						|| (time(NULL) - winwid->click_start_time > FEH_JITTER_TIME))) {
 					opt.mode = MODE_PAN;
 					winwid->mode = MODE_PAN;
 				}

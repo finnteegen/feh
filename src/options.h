@@ -108,6 +108,7 @@ struct __fehoptions {
 
 	int force_aliasing;
 	int tap_zones;
+	int no_panning;
 	int thumb_w;
 	int thumb_h;
 	int limit_w;
@@ -241,6 +242,7 @@ OPTION_no_xinerama,
 OPTION_draw_tinted,
 OPTION_info,
 OPTION_tap_zones,
+OPTION_no_panning,
 OPTION_force_aliasing,
 OPTION_no_fehbg,
 OPTION_scroll_step,
