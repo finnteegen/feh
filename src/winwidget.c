@@ -437,7 +437,8 @@ void winwidget_setup_pixmaps(winwidget winwid)
 					winwid->gc = XCreateGC(disp, winwid->win, GCForeground, &gcval);
 				}
 			}
-			winwid->bg_pmap = XCreatePixmap(disp, winwid->win, scr->width, scr->height, depth);
+			int pmap_size = (scr->width > scr->height) ? scr->width : scr->height;
+			winwid->bg_pmap = XCreatePixmap(disp, winwid->win, pmap_size, pmap_size, depth);
 		}
 		XFillRectangle(disp, winwid->bg_pmap, winwid->gc, 0, 0, scr->width, scr->height);
 	} else {
